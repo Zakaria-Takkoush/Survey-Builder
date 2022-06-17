@@ -26,4 +26,7 @@ Route::group(['prefix' => 'v1'], function(){
 
     Route::post('/add_survey', [SurveyController::class, 'addSurvey']);
     Route::post('/add_question', [QuestionController::class, 'addQuestion']);
+    Route::post('/edit_question/{id}', [QuestionController::class, 'editQuestion']);
+    Route::post('/delete_question', [QuestionController::class, 'deleteQuestion']);
+
 });

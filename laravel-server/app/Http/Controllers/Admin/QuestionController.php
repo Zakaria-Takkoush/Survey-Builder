@@ -19,8 +19,23 @@ class QuestionController extends Controller
         
         return response()->json([
             "status" => "Success",
-            "category" => $question
+            "question" => $question
         ], 200);
     }
+
+    // Edit Question
+    public function editQuestion($id, Request $request){
+
+        $question = Question::find($id);
+        $question->text = $request->text;
+        $question->qtype_id = $request->qtype_id;
+        $question->save();
+
+        return response()->json([
+            "status" => "Success",
+            "question" => $question
+        ], 200);
+    }
+
 }
 
