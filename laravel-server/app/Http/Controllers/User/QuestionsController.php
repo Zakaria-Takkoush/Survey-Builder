@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Question;
+use App\Models\QType;
 use Illuminate\Http\Request;
 
 class QuestionsController extends Controller
@@ -20,5 +21,14 @@ class QuestionsController extends Controller
             "status" => "Success",
             "questions" => $questions
         ], 200);
+    }
+
+    public function getTypes() {
+        $types = Qtype::all();
+
+        return response()->json([
+            'status' => "success",
+            'question_types' => $types
+        ],200);
     }
 }
