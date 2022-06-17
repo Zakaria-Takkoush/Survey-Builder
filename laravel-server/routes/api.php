@@ -31,4 +31,6 @@ Route::group(['prefix' => 'v1'], function(){
 
     Route::get('/diaplay_questions/{id}', [QuestionsController::class, 'diaplayQuestions']);
 
+    Route::get('/diaplay_surveys', [SurveysController::class, 'getSurveys']);
+
 });
