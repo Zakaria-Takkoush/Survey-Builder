@@ -23,4 +23,6 @@ Route::group(['prefix' => 'v1'], function(){
         Route::post('/refresh', [JWTController::class, 'refresh']);
         Route::post('/profile', [JWTController::class, 'profile']);
     });
+
+    Route::post('/add_survey', [SurveyController::class, 'addSurvey']);
 });
