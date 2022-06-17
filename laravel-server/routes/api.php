@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\QyestionController;
+use App\Http\Controllers\Admin\QuestionController;
 use App\Http\Controllers\Admin\SurveyController;
 use App\Http\Controllers\User\AnswersController;
 use App\Http\Controllers\User\QuestionsController;
@@ -25,4 +25,5 @@ Route::group(['prefix' => 'v1'], function(){
     });
 
     Route::post('/add_survey', [SurveyController::class, 'addSurvey']);
+    Route::post('/add_question', [QuestionController::class, 'addQuestion']);
 });
