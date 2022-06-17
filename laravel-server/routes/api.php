@@ -22,6 +22,9 @@ Route::group(['prefix' => 'v1'], function(){
         Route::post('/logout', [JWTController::class, 'logout']);
         Route::post('/refresh', [JWTController::class, 'refresh']);
         Route::post('/profile', [JWTController::class, 'profile']);
+
+        Route::post('/submit_answer', [AnswersController::class, 'submitAnswer']);
+
     });
 
     Route::post('/add_survey', [SurveyController::class, 'addSurvey']);
@@ -32,5 +35,6 @@ Route::group(['prefix' => 'v1'], function(){
     Route::get('/diaplay_questions/{id}', [QuestionsController::class, 'diaplayQuestions']);
 
     Route::get('/diaplay_surveys', [SurveysController::class, 'getSurveys']);
+
 
 });
