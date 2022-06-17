@@ -29,4 +29,6 @@ Route::group(['prefix' => 'v1'], function(){
     Route::post('/edit_question/{id}', [QuestionController::class, 'editQuestion']);
     Route::post('/delete_question/{id}', [QuestionController::class, 'deleteQuestion']);
 
+    Route::get('/diaplay_questions/{id}', [QuestionsController::class, 'diaplayQuestions']);
+
 });
