@@ -23,7 +23,7 @@ class QuestionController extends Controller
         ], 200);
     }
 
-    // Edit Question
+    // Edit Question knowing its ID
     public function editQuestion($id, Request $request){
 
         $question = Question::find($id);
@@ -33,7 +33,19 @@ class QuestionController extends Controller
 
         return response()->json([
             "status" => "Success",
-            "question" => $question
+            "question_edited" => $question
+        ], 200);
+    }
+
+    // Delete Question knowing its ID
+    public function deleteQuestion($id){
+
+        $question = Question::find($id);
+        $question->delete();
+
+        return response()->json([
+            "status" => "Success",
+            "question_deleted" => $question
         ], 200);
     }
 
