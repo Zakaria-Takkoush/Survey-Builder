@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Button Style */
@@ -30,3 +31,112 @@
   border-radius: 10px;
   padding: 7px;
 }
+
+/* Pages */
+
+/* common */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.container >div {
+  width: 90%;
+}
+
+/* Survey/Questions Page */
+
+.survey_nmae {
+  height: fit-content;
+  padding: 10px;
+  color: white;
+  background-color: purple;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.question {
+  border-radius: 30px;
+  min-height: 100px;
+  height: fit-content;
+  background-color: rgb(207, 199, 214);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.question > div {
+  width: 90%;
+}
+
+.q_text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.q_field {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.q_field > input {
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 7px;
+  width: 100%;
+  border: 2px solid purple;
+}
+
+.q_field select {
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 7px;
+  border: 2px solid purple;
+  width: fit-content;
+}
+
+option {
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 7px;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 30px;
+}
+
+/* Surveys Page */
+
+.surveys-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  gap: 30px;
+}
+
+.survey {
+  border-radius: 30px;
+  min-height: 100px;
+  height: fit-content;
+  background-color: rgb(207, 199, 214);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+}
+
