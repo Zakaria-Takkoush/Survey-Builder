@@ -10,14 +10,25 @@ class SurveyController extends Controller
 {
     //Add a survey
 
-    public function addSurvey(Request $request){
+    public function addSurvey(Request $request)
+    {
         $survey = new Survey;
         $survey->name = $request->name;
         $survey->save();
-        
+
         return response()->json([
             "status" => "Success",
-            "category" => $survey
+            "survey" => $survey
+        ], 200);
+    }
+
+    public function getSurvey($id)
+    {
+        $survey = Survey::find($id);
+
+        return response()->json([
+            "status" => "Success",
+            "survey" => $survey
         ], 200);
     }
 }

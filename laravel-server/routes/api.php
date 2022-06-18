@@ -10,9 +10,9 @@ use App\Http\Controllers\User\SurveysController;
 use App\Http\Controllers\JWTController;
 
 // Version 1
-Route::group(['prefix' => 'v1'], function(){
+Route::group(['prefix' => 'v1'], function () {
 
-    Route::group(['middleware' => 'api'], function($router) {
+    Route::group(['middleware' => 'api'], function ($router) {
         Route::post('/register', [JWTController::class, 'register']);
         Route::post('/login', [JWTController::class, 'login']);
         Route::post('/logout', [JWTController::class, 'logout']);
@@ -20,7 +20,6 @@ Route::group(['prefix' => 'v1'], function(){
         Route::post('/profile', [JWTController::class, 'profile']);
 
         Route::post('/submit_answer', [AnswersController::class, 'submitAnswer']);
-
     });
 
     //Admin acrons
@@ -33,7 +32,7 @@ Route::group(['prefix' => 'v1'], function(){
     Route::get('/diaplay_questions/{id}', [QuestionsController::class, 'diaplayQuestions']);
 
     Route::get('/diaplay_surveys', [SurveysController::class, 'getSurveys']);
+    Route::get('/diaplay_survey/{id}', [SurveyController::class, 'getSurvey']);
 
     Route::get('/question_types', [QuestionsController::class, 'getTypes']);
-
 });
