@@ -25,8 +25,8 @@ const SurveyPanel = () => {
     }, [])
 
     // Fetch a single survey
-    async function fetchSurvey() {
-    const res = await fetch(`http://127.0.0.1:8000/api/v1/diaplay_survey/1`);
+    async function fetchSurvey(id) {
+    const res = await fetch(`http://127.0.0.1:8000/api/v1/diaplay_survey/${id}`);
     const data = await res.json();
     return data.survey;
   };
