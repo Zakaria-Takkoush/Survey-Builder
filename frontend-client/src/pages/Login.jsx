@@ -3,7 +3,12 @@ import Button from '../components/Button'
 
 const Login = () => {
   return (
-    <><Button text=""></Button></>
+    <div className="login">
+      <h1>Login</h1>
+      <input type="email" placeholder='email' />
+      <input type="password" placeholder='password'/>
+      <><Button text="Log In"></Button></>
+    </div>
   )
 }
 
