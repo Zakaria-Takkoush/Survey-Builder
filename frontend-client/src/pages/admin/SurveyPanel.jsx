@@ -59,6 +59,10 @@ const SurveyPanel = ( ) => {
               <p>{survey.name}</p>
             ))} */}
 
+            <div>
+              
+            </div>
+
           {surveys.length > 0 ? <Surveys_Admin surveys={surveys}/> : <h2>No Surveys</h2>}
 
         </div>
