@@ -1,8 +1,9 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Surveys_Admin from './Surveys_Admin';
 
-const SurveyPanel = () => {
+const SurveyPanel = ( ) => {
   // Initial State... empty array
     const [surveys, setSurveys] = useState([]);
 
@@ -45,7 +46,25 @@ const SurveyPanel = () => {
     };
 
   return (
-    <div></div>
+
+    <div className="container">
+
+        <div className="survey_nmae">
+            <h1>Available Surveys</h1>
+        </div>
+
+        <div className="surveys-container">
+
+            <div className="survey">
+                <div>
+                {surveys.length > 0 ? <Surveys_Admin surveys={surveys}/> : "No Surveys"}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
   )
 }
 
