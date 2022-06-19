@@ -55,11 +55,11 @@ const SurveyPanel = ( ) => {
 
         <div className="surveys-container">
 
-            <div className="survey">
-                <div>
-                {surveys.length > 0 ? <Surveys_Admin surveys={surveys}/> : "No Surveys"}
-                </div>
-            </div>
+            {/* {surveys.map((survey) => (
+              <p>{survey.name}</p>
+            ))} */}
+
+          {surveys.length > 0 ? <Surveys_Admin surveys={surveys}/> : <h2>No Surveys</h2>}
 
         </div>
 

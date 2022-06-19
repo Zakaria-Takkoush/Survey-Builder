@@ -73,7 +73,8 @@ const QuestionsPanel = () => {
   };
 
   return (
-    <div>QuestionsPanel</div>
+    <>
+    </>
   )
 }
 

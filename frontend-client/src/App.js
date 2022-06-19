@@ -12,9 +12,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Login />
-
         <Routes>
+          <Route path="/" element={<Login />}></Route>
           <Route path="/surv_panel" element={<SurveyPanel />}></Route>
           <Route
             path="/surv_panel/questions"
