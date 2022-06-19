@@ -1,3 +1,5 @@
+// Specific Survey Questions Page
+
 import React from 'react'
 import { useEffect , useState } from 'react';
 
@@ -26,6 +28,19 @@ const QuestionsPanel = () => {
       }
       getQuestions()
     }, [])
+
+      //Add a Question to this survey
+   async function addQuestion(question) {
+    const res = await fetch("http://127.0.0.1:8000/api/v1/add_question", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(question),
+    });
+    const data = await res.json();
+    setQuestions([...questions, data]);
+  };
 
   return (
     <div>QuestionsPanel</div>
