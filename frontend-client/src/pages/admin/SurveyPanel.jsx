@@ -31,6 +31,19 @@ const SurveyPanel = () => {
     return data.survey;
   };
 
+  //Add a survey
+   async function addSurvey(survey) {
+      const res = await fetch("http://127.0.0.1:8000/api/v1/add_survey", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(survey),
+      });
+      const data = await res.json();
+      setSurveys([...surveys, data]);
+    };
+
   return (
     <div></div>
   )
