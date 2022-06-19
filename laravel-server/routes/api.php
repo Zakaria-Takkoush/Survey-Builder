@@ -22,7 +22,7 @@ Route::group(['prefix' => 'v1'], function () {
         Route::post('/submit_answer', [AnswersController::class, 'submitAnswer']);
     });
 
-    //Admin acrons
+    //Admin actions
 
     Route::post('/add_survey', [SurveyController::class, 'addSurvey']);
     Route::post('/add_question', [QuestionController::class, 'addQuestion']);

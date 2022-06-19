@@ -42,6 +42,21 @@ const QuestionsPanel = () => {
     setQuestions([...questions, data]);
   };
 
+  //Delete a Question from the survey
+  async function deleteQuestion(id) {
+    const res = await fetch(`http://127.0.0.1:8000/api/v1/delete_question/${id}`, {
+      method: "POST",
+      // headers: {
+      //   "Content-type": "application/json",
+      // },
+      // body: JSON.stringify(id),
+    });
+    //Checking Deletion Status
+    res.status === 200 // if Success
+      ? setQuestions(questions.filter((question) => question.id !== id))
+      : alert("Error Deleting");
+  };
+
   return (
     <div>QuestionsPanel</div>
   )

@@ -10,21 +10,23 @@ class QuestionController extends Controller
 {
     //Add a question
 
-    public function addQuestion(Request $request){
+    public function addQuestion(Request $request)
+    {
         $question = new Question;
         $question->text = $request->text;
         $question->qtype_id = $request->qtype_id;
         $question->survey_id = $request->survey_id;
         $question->save();
-        
+
         return response()->json([
             "status" => "Success",
-            "question" => $question
+            "question_added" => $question
         ], 200);
     }
 
     // Edit Question knowing its ID
-    public function editQuestion($id, Request $request){
+    public function editQuestion($id, Request $request)
+    {
 
         $question = Question::find($id);
         $question->text = $request->text;
@@ -38,7 +40,8 @@ class QuestionController extends Controller
     }
 
     // Delete Question knowing its ID
-    public function deleteQuestion($id){
+    public function deleteQuestion($id)
+    {
 
         $question = Question::find($id);
         $question->delete();
@@ -48,6 +51,4 @@ class QuestionController extends Controller
             "question_deleted" => $question
         ], 200);
     }
-
 }
-
