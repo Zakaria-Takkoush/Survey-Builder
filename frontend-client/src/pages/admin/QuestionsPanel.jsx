@@ -57,6 +57,21 @@ const QuestionsPanel = () => {
       : alert("Error Deleting");
   };
 
+  // Edit a question
+  async function editQuestion(id, question) {
+    const res = await fetch(`http://127.0.0.1:8000/api/v1/edit_question/${id}`, {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(question),
+    });
+    const data = await res.json();
+    setQuestions(questions.map((question) =>
+     question.id === id ? {...question, data } : question)
+     );
+  };
+
   return (
     <div>QuestionsPanel</div>
   )
