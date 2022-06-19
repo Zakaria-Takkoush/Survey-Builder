@@ -73,8 +73,18 @@ const QuestionsPanel = () => {
   };
 
   return (
-    <>
-    </>
+    <div className="question">
+    <input type="text" placeholder="Question Text"/>
+    <select name="" id="">
+        <option value="">Text</option>
+        <option value="">Dropdown</option>
+        <option value="">Checkbox</option>
+        <option value="">Radio Buttons</option>
+        <option value="">Date</option>
+        <option value="">Yes/No</option>
+    </select>
+    <button>Add Question</button>
+</div>
   )
 }
 
