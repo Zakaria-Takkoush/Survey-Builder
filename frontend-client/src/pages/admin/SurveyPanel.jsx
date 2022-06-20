@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Add_Survey from '../../components/Add_Survey';
 import Surveys_Admin from './Surveys_Admin';
 
 const SurveyPanel = ( ) => {
@@ -60,7 +61,7 @@ const SurveyPanel = ( ) => {
             ))} */}
 
             <div>
-              
+              <Add_Survey onAdd={addSurvey}/>
             </div>
 
           {surveys.length > 0 ? <Surveys_Admin surveys={surveys}/> : <h2>No Surveys</h2>}
