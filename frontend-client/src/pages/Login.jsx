@@ -2,8 +2,11 @@ import React, { useEffect } from 'react'
 import Button from '../components/Button'
 import { useLocation } from 'react-router-dom'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+
+  const navigate = useNavigate()
 
   // Initial state of email and password
 
@@ -39,6 +42,8 @@ const Login = () => {
       console.log(response)
       setEmail("")
       setPassword("")
+      // Navigate to Surveys Panel
+      response.access_token ? navigate('/surv_panel') : alert("Cannot login!")
     };
 
   return (
