@@ -8,6 +8,12 @@ const QuestionsPanel = () => {
   // Initial State... empty array of questions
   const [questions, setQuestions] = useState([]);
 
+  // Getting and Setting the value of the question type
+  const [q_type, setQ_type] = useState(1);
+
+  // Getting and Setting the text of the question
+  const [text, setText] = useState("");
+
   // Get the survey_idfrom local storage
   let survey_id = localStorage.getItem("survey_id")
 
@@ -29,16 +35,21 @@ const QuestionsPanel = () => {
       getQuestions()
     }, [])
 
-      //Add a Question to this survey
-   async function addQuestion(question) {
+  //Add a Question to this survey
+
+   async function addQuestion() {
+    // console.log(q_type)
+    let question_to_add = new FormData();
+    question_to_add.append('survey_id', survey_id);
+    question_to_add.append('qtype_id', q_type);
+    question_to_add.append('text', text);
+
     const res = await fetch("http://127.0.0.1:8000/api/v1/add_question", {
       method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify(question),
+      body: question_to_add,
     });
     const data = await res.json();
+    // console.log(data)
     setQuestions([...questions, data]);
   };
 
@@ -73,17 +84,23 @@ const QuestionsPanel = () => {
   };
 
   return (
-    <div className="question">
-    <input type="text" placeholder="Question Text"/>
-    <select name="" id="">
-        <option value="">Text</option>
-        <option value="">Dropdown</option>
-        <option value="">Checkbox</option>
-        <option value="">Radio Buttons</option>
-        <option value="">Date</option>
-        <option value="">Yes/No</option>
+  <div className="add-question">
+    <input type="text" placeholder="Question Text" value={text} onChange={(e) => {
+      setText(e.target.value)
+    }} />
+    <label>Type: </label>
+    <select name="" id="" value={q_type} onChange={(e) => {
+      setQ_type(e.target.value)
+      // console.log(e.target.value)
+    }}>
+        <option value="1">Text</option>
+        <option value="2">Dropdown</option>
+        <option value="3">Checkbox</option>
+        <option value="4">Radio Buttons</option>
+        <option value="5">Date</option>
+        <option value="6">Yes/No</option>
     </select>
-    <button>Add Question</button>
+    <button className='btn' onClick={addQuestion}>Add Question</button>
 </div>
   )
 }

@@ -150,7 +150,6 @@ option {
 }
 
 input[type=text] {
-
   font-size: 15px;
   border-radius: 10px;
   padding: 7px;
@@ -158,3 +157,22 @@ input[type=text] {
   border: 2px solid purple;
 }
 
+select {
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 7px;
+  border: 2px solid purple;
+  width: fit-content;
+}
+
+.add-question {
+  border-radius: 30px;
+  min-height: 100px;
+  height: fit-content;
+  background-color: rgb(207, 199, 214);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 30px;
+}
