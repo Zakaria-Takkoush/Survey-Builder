@@ -84,6 +84,7 @@ const QuestionsPanel = () => {
   };
 
   return (
+    <div className='.container'>
   <div className="add-question">
     <input type="text" placeholder="Question Text" value={text} onChange={(e) => {
       setText(e.target.value)
@@ -101,6 +102,13 @@ const QuestionsPanel = () => {
         <option value="6">Yes/No</option>
     </select>
     <button className='btn' onClick={addQuestion}>Add Question</button>
+</div>
+<div className='questions-container'>
+  {questions.map((question) => (
+              <p>{question.text}</p>
+            ))}
+</div>
+
 </div>
   )
 }
