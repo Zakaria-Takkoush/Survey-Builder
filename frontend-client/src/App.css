@@ -14,10 +14,17 @@
   border-radius: 10px;
   font-weight: bold;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(63, 9, 113);
 }
 
 /* Login box */
 .login {
+  margin: auto;
+  margin-top: 30vh;
   display: flex;
   flex-direction: column;
   gap: 30px;

@@ -17,8 +17,8 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     // Prevent page reload
-    logIn()
     event.preventDefault();
+    logIn()
   };
 
   //Login API
@@ -30,13 +30,16 @@ const Login = () => {
 
       const res = await fetch("http://127.0.0.1:8000/api/v1/login", {
         method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(user_data),
+        // headers: {
+        //   "Content-type": "application/json",
+        // },
+        // body: JSON.stringify(user_data),
+        body: user_data,
       });
       const response = await res.json();
       console.log(response)
+      setEmail("")
+      setPassword("")
     };
 
   return (
