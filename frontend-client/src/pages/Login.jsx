@@ -5,8 +5,7 @@ import { useState } from 'react'
 
 const Login = () => {
 
-  // let email = document.getElementById("email").value
-  // let password = document.getElementById("password").value
+  // Initial state of email and password
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
