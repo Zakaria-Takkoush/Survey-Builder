@@ -2,10 +2,12 @@ import React from 'react'
 import Button from '../../components/Button'
 import Survey_Admin from './Survey_Admin'
 
-const Surveys_Admin = (surveys) => {
+// Surveys List for Admin
+
+const Surveys_Admin = ({surveys, onClick}) => {  
 
   return (
-    <div>
+    <div className='surveys-container'>
       {surveys.map((survey) => (
       <Survey_Admin 
       key={survey.id} 

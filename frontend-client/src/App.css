@@ -132,6 +132,7 @@ option {
   flex-direction: column;
   margin: auto;
   gap: 30px;
+  width: 100%;
 }
 
 .survey {
@@ -145,5 +146,15 @@ option {
   align-items: center;
   gap: 20px;
   padding: 30px;
+  width: 100%;
+}
+
+input[type=text] {
+
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 7px;
+  width: 30%;
+  border: 2px solid purple;
 }
 
